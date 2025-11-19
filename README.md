@@ -85,55 +85,6 @@ What this means:
 
 ## Example Output (pairwise.py):
 ```
-#JEPA-style PAIRWISE energy model demo.
-This demo calculates energy based on all token-token interactions.
-
-Context   ['A child is playing with a red ball in the park.']: 
-Candidate ['The kid happily throws the bright red ball across the playground.']: 
-
-[DEBUG] Model requested tool `evaluate_joint_embedding_energy` with args:
-{
-  "context": "#",
-  "candidate": "The kid happily throws the bright red ball across the playground.",
-  "verbose": true
-}
-[INFO] Loading GloVe embeddings from: /Users/farukalpay/Desktop/Glove/glove.6B.300d.txt
-[INFO] Loaded 400000 GloVe vectors of dim 300.
-
-[DEBUG] Tool Output (Pairwise Contributors):
-{
-  "energy": 1.0,
-  "mean_pairwise_similarity": 0.0,
-  "gpt_global_similarity": 0.1558,
-  "top_contributors": [],
-  "interpretation": "Energy is calculated from pairwise token interactions. Top contributors list the specific word pairs (h_i, k_j) that had the highest cosine similarity, driving the energy down.",
-  "debug_info": {
-    "context_tokens_count": 1,
-    "candidate_tokens_count": 11,
-    "matrix_shape": [
-      1,
-      11
-    ]
-  }
-}
-
-================ PAIRWISE ENERGY EXPLANATION ================
-
-Energy score: 1.0 (lower is better, so this indicates a weak match between context and candidate).
-
-Explanation:
-- The context is just the single character: `#`
-- The candidate is: “The kid happily throws the bright red ball across the playground.”
-- Because the context has essentially no semantic content, the model can’t find meaningful semantic alignments between words in the context and words in the candidate.
-
-Top contributors (matching word pairs):
-- `top_contributors` is empty: `[]`
-
-That means there are no specific word pairs between the context and the candidate that strongly contribute to lowering the energy. In other words, the model does not detect meaningful semantic overlap between `#` and the candidate sentence.
-
-=============================================================
-
-(base) farukalpay@Mac november % python /Users/farukalpay/Desktop/Python/november/main2.py
 JEPA-style joint embedding + energy-based model demo.
 Press Enter for defaults if you don't feel like typing.
 
