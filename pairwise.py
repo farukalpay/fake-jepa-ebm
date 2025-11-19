@@ -1,5 +1,5 @@
 """
-jepa_ebm_demo_fixed.py
+pairwise.py
 
 Demo of:
 - OpenAI Responses API with GPT-5.1 function calling
